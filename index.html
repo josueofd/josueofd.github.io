@@ -1,44 +1,299 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>josueofd — Roadmap de Cibersegurança</title>
-  <meta name="description" content="Página inicial de josueofd — links e recursos, incluindo o Roadmap de Cibersegurança">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Josué OFD | Cibersegurança</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    :root{--bg:#0b1120;--panel:#081024;--muted:#9fb6c8;--accent:#38bdf8}
-    body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:#e6eef8;margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);padding:28px;border-radius:12px;max-width:880px;width:100%}
-    h1{margin:0 0 6px 0;font-size:28px}
-    p.lead{color:var(--muted);margin:0 0 18px 0}
-    .links{display:flex;flex-wrap:wrap;gap:12px}
-    a.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:8px;background:rgba(56,189,248,0.12);color:var(--accent);text-decoration:none;font-weight:600;border:1px solid rgba(56,189,248,0.12)}
-    a.ghost{background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--muted)}
-    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    :root {
+      --bg-color: #0a0e1a;
+      --text-color: #a0a8c0;
+      --heading-color: #ffffff;
+      --primary-cyan: #00c2cb;
+      --secondary-purple: #7b68ee;
+      --button-bg: #131a2e;
+      --status-border: #1c3a5e;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column; /* Alterado para suportar footer */
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .main-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1200px;
+      padding: 40px;
+      gap: 40px;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    /* Left Section */
+    .left-section {
+      flex: 1;
+    }
+
+    .tag {
+      color: var(--primary-cyan);
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .tag i {
+      margin-right: 5px;
+      font-size: 0.5rem;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      color: var(--heading-color);
+      margin: 10px 0 20px;
+    }
+
+    h1 .highlight {
+      color: var(--secondary-purple);
+      background: linear-gradient(90deg, var(--secondary-purple), var(--primary-cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .portals-section h3 {
+      color: var(--primary-cyan);
+      font-size: 1rem;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    .portals-section h3 i {
+      margin-right: 8px;
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--heading-color);
+      font-weight: 500;
+      background-color: var(--button-bg);
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+    }
+    .btn i {
+      margin-right: 15px;
+      font-size: 1.2rem;
+    }
+    .btn.main-download {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    .btn.cyan { color: var(--primary-cyan); border-color: var(--primary-cyan); }
+    .btn.purple { color: var(--secondary-purple); border-color: var(--secondary-purple); }
+    .btn.dark { border-color: #2a3b5a; }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Right Section */
+    .right-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .status-box {
+      border: 1px solid var(--status-border);
+      background-color: rgba(19, 26, 46, 0.6);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 50px;
+    }
+
+    .status-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0, 194, 203, 0.1) 0%, rgba(0,0,0,0) 70%);
+      z-index: 0;
+    }
+
+    .lock-icon {
+      font-size: 5rem;
+      color: #1c263a;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .status-content {
+      position: relative;
+      z-index: 1;
+      text-align: left;
+    }
+
+    .status-title {
+      font-size: 0.8rem;
+      color: var(--primary-cyan);
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .status-text {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--heading-color);
+    }
+
+    /* --- NOVO FOOTER --- */
+    .page-footer {
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      border-top: 1px solid var(--status-border);
+      background: rgba(10, 14, 26, 0.9);
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    .contact-link {
+      color: var(--secondary-purple);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-link:hover {
+      color: var(--primary-cyan);
+      text-shadow: 0 0 10px rgba(0, 194, 203, 0.5);
+    }
+
+    /* Navigation */
+    .site-nav { width:100%; max-width:1200px; padding:18px 40px; box-sizing:border-box; display:flex; justify-content:space-between; align-items:center }
+    .nav-left { color:var(--heading-color); font-weight:700 }
+    .nav-right a { color:var(--text-color); text-decoration:none; margin-left:18px; font-weight:600 }
+    .nav-right a.cta { color:var(--primary-cyan); }
   </style>
 </head>
 <body>
-  <main class="card">
-    <h1>josueofd</h1>
-    <p class="lead">Bem-vindo ao site pessoal de Josué — recursos, projetos e o Roadmap de Cibersegurança.</p>
 
-    <div class="links">
-      <a class="btn" href="/roadmap-ciberseguranca.html">📘 Abrir Roadmap de Cibersegurança</a>
-      <a class="ghost" href="https://github.com/josueofd" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a class="ghost" href="/README.md" target="_blank" rel="noopener noreferrer">Repo README</a>
+<!-- Navigation -->
+<header class="site-nav">
+  <div class="nav-left">Josué OFD</div>
+  <nav class="nav-right">
+    <a href="/">Home</a>
+    <a href="/roadmap-ciberseguranca.html" class="cta">Roadmap</a>
+    <a href="https://github.com/josueofd" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+</header>
+
+<div class="main-wrapper">
+  <div class="container">
+    <div class="left-section">
+      <div class="tag"><i class="fas fa-circle"></i> Josué OFD - 2025</div>
+      <h1>Domine a <br><span class="highlight">Cibersegurança</span></h1>
+      <p class="description">
+        Roadmap completo de estudos e projetos. Acesse abaixo as principais plataformas e entre em contato para colaborações.
+      </p>
+
+      <div class="portals-section">
+        <h3><i class="fas fa-link"></i> PORTAIS & CONTATO</h3>
+        <div class="button-grid">
+          <a href="mailto:josueofd@gmail.com" class="btn main-download">
+            <i class="fas fa-envelope"></i>
+            <div>
+              Falar com<br>Josué
+            </div>
+          </a>
+                    
+          <a href="https://github.com/josueofd" class="btn dark" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+          <a href="#" class="btn cyan">
+            <i class="fas fa-user-secret"></i>
+            Hackers do Bem
+          </a>
+          <a href="#" class="btn dark">
+            <i class="fas fa-shield-alt"></i>
+            Coursera 2025
+          </a>
+          <a href="#" class="btn purple">
+            <i class="fas fa-code"></i>
+            Meus Projetos
+          </a>
+          <a href="#" class="btn dark">
+            <i class="fas fa-network-wired"></i>
+            Cisco NetAcad
+          </a>
+        </div>
+      </div>
     </div>
 
-    <section style="margin-top:18px;color:var(--muted);line-height:1.5">
-      <p>Observações:</p>
-      <ul>
-        <li>O Roadmap é uma página estática localizada em <code>/roadmap-ciberseguranca.html</code>.</li>
-        <li>Se desejar que eu torne o roadmap a home principal (renomeando para <code>index.html</code>), eu posso fazer isso.</li>
-      </ul>
-    </section>
+    <div class="right-section">
+      <div class="status-box">
+        <i class="fas fa-lock lock-icon"></i>
+        <div class="status-content">
+          <span class="status-title">STATUS DO DESENVOLVEDOR</span>
+          <span class="status-text">Disponível para novos projetos e consultoria.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <footer>
-      Publicado via GitHub Pages — atualizações são publicadas ao enviar para a branch <code>main</code>.
-    </footer>
-  </main>
+<footer class="page-footer">
+  <p>Desenvolvido por Josué OFD &bull; 
+    <a href="mailto:josueofd@gmail.com" class="contact-link">
+      <i class="fas fa-paper-plane"></i> josueofd@gmail.com
+    </a>
+  </p>
+</footer>
+
 </body>
 </html>
