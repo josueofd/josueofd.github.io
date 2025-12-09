@@ -902,29 +902,6 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
             document.getElementById('header-progress-bar').style.width = `${percentage}%`;
         }
 
-        function downloadHTML() {
-            // Clona o elemento raiz
-            const clone = document.documentElement.cloneNode(true);
-            
-            // Retorna o HTML completo
-            const htmlContent = "<!DOCTYPE html>\n" + clone.outerHTML;
-            
-            // Cria o blob
-            const blob = new Blob([htmlContent], {type: 'text/html'});
-            const url = URL.createObjectURL(blob);
-            
-            // Cria link temporário e clica
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'roadmap-ciberseguranca.html';
-            document.body.appendChild(a);
-            a.click();
-            
-            // Limpa
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        }
-
         // Init
         window.addEventListener('DOMContentLoaded', () => {
             renderModules(1);
