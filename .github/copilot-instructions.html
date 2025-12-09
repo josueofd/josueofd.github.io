@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Instruções Copilot — josueofd.github.io</title>
+  <style>body{font-family:system-ui,Arial,sans-serif;background:#0b1120;color:#e6eef8;padding:24px}main{max-width:900px;margin:0 auto;background:#081024;padding:24px;border-radius:8px;border:1px solid rgba(255,255,255,0.04)}h1{color:#8bdcf6}h2{color:#cfefff}code{background:#072033;padding:2px 6px;border-radius:4px}</style>
+</head>
+<body>
+  <main>
+    <h1>Instruções rápidas para agentes de IA (Copilot)</h1>
+    <p><strong>Propósito:</strong> repositório de site estático. Edite arquivos HTML/CSS/JS diretamente (ex.: <code>roadmap-ciberseguranca.html</code>).</p>
+
+    <h2>Visão geral</h2>
+    <ul>
+      <li>Projeto: site pessoal / roadmap de cibersegurança (sem backend).</li>
+      <li>Arquivos principais: <code>roadmap-ciberseguranca.html</code>, <code>README.md</code>.</li>
+      <li>Integrações externas: Google Fonts, Material Symbols, Tailwind via CDN e scripts inline.</li>
+    </ul>
+
+    <h2>Padrões e convenções</h2>
+    <ul>
+      <li>Estilo: Tailwind via CDN, classes utilitárias inline (ex.: <code>glass-panel</code>, <code>cyber-gradient-text</code>).</li>
+      <li>Comportamento: scripts grandes inline controlam carregamento de imagens e substituições. Teste no navegador antes de alterações.</li>
+      <li>Imagens: há mapas e mecanismos (ex.: <code>IMG_SEARCH_REPLACE_MAP</code>, <code>IMG_GEN_REPLACE_MAP</code>) — não altere chaves sem revisar o script.</li>
+    </ul>
+
+    <h2>Fluxos sensíveis</h2>
+    <ul>
+      <li>Fetchs para domínios Google/externos e uso de blobs/URLs. Cuidado com CORS.</li>
+      <li>Observers DOM: <code>MutationObserver</code> e <code>ResizeObserver</code> atuam em imagens — mudanças podem quebrar o comportamento visual.</li>
+    </ul>
+
+    <h2>Como testar / preview</h2>
+    <pre><code>python3 -m http.server 8000
+npx live-server --port=8000
+</code></pre>
+    <p>Acesse <code>http://localhost:8000/roadmap-ciberseguranca.html</code>.</p>
+
+    <h2>O que evitar</h2>
+    <ul>
+      <li>Remover/minificar scripts inline sem replicar o comportamento.</li>
+      <li>Quebrar referências a fonts/icons/hosts externos usados pelo layout e imagens.</li>
+    </ul>
+
+    <h2>Como adicionar nova página</h2>
+    <ol>
+      <li>Criar novo <code>.html</code> seguindo a estrutura de <code>roadmap-ciberseguranca.html</code>.</li>
+      <li>Atualizar manualmente o <code>&lt;nav&gt;</code> se necessário.</li>
+      <li>Testar localmente conforme instruído acima.</li>
+    </ol>
+
+    <h2>Commit & deploy</h2>
+    <p>Use os comandos git habituais para adicionar, commitar e enviar para a branch <code>main</code>. O site publica via GitHub Pages a partir da branch <code>main</code>.</p>
+
+    <h2>Arquivos-chave</h2>
+    <ul>
+      <li><code>roadmap-ciberseguranca.html</code> — página principal e maior parte do código.</li>
+      <li><code>README.md</code> — meta do repo.</li>
+    </ul>
+
+    <h2>Perguntas para validar antes de mudanças</h2>
+    <ul>
+      <li>Esta mudança afetará os mapas de imagem (<code>IMG_*_MAP</code>) ou o fluxo de geração de imagens?</li>
+      <li>Preciso alterar URLs externos/recursos de fonte/icones?</li>
+    </ul>
+
+    <p>Se quiser, converto este HTML para um layout mais estilizado, ou extraio scripts inline para arquivos separados — diga qual opção prefere.</p>
+  </main>
+</body>
+</html>
