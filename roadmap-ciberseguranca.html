@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Roadmap de estudo completo em Cibersegurança de 4 anos" name="description">
-    <title>Mestrado Prático em Cibersegurança - Roadmap 2025</title>
+    <title>Roadmap Cyber - Versão Final</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
@@ -66,10 +65,8 @@
             box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
         }
 
-        /* Ajuste para o scroll não esconder o título atrás do menu */
-        .scroll-mt-28 {
-            scroll-margin-top: 7rem;
-        }
+        /* Ajuste crucial para o clique no link não esconder o título */
+        html { scroll-padding-top: 100px; }
 
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #0f172a; }
@@ -80,326 +77,157 @@
 <body class="min-h-screen flex flex-col selection:bg-sky-500/30">
 
     <nav class="sticky top-0 z-50 glass-panel border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center h-20">
                 
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3">
                     <div class="p-2 bg-sky-500/10 rounded-lg border border-sky-500/20">
                         <span class="material-symbols-outlined text-sky-400 text-3xl">security</span>
                     </div>
                     <div>
                         <h1 class="text-xl font-bold text-white tracking-tight">Cyber<span class="cyber-gradient-text">Mastery</span></h1>
-                        <p class="text-[11px] text-slate-400 font-mono tracking-wider uppercase hidden sm:block">Roadmap Profissional 4 Anos</p>
-                    </div>
-
-                    <div class="flex ml-6 pl-6 border-l border-white/10 h-10 items-center">
-                        <a href="#links" class="text-sm font-medium text-slate-400 hover:text-sky-400 transition-colors flex items-center gap-2 px-3 py-2 rounded hover:bg-white/5 border border-transparent hover:border-white/10">
-                            <span class="material-symbols-outlined text-lg">link</span>
-                            <span>Links Úteis</span>
-                        </a>
                     </div>
                 </div>
 
-                <div class="flex items-center gap-4">
-                    <button class="hidden md:flex items-center gap-2 px-3 py-1.5 bg-white/10 hover:bg-white/20 border border-white/10 rounded-md text-xs font-bold text-white transition-all" onclick="downloadHTML()" title="Baixar arquivo HTML para enviar ao GitHub">
-                        <span class="material-symbols-outlined text-sm">download</span>
-                        Baixar Código
-                    </button>
-                    
-                    <div class="hidden md:flex flex-col items-end w-48 lg:w-64">
-                        <div class="flex justify-between w-full text-xs text-slate-400 mb-2 font-medium">
-                            <span>Progresso</span>
-                            <span class="text-sky-400 font-bold" id="header-progress-text">0%</span>
-                        </div>
-                        <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden border border-slate-700">
-                            <div class="h-full bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-500 w-0 transition-all duration-1000 ease-out relative" id="header-progress-bar" style="width: 0%;">
-                                <div class="absolute right-0 top-0 bottom-0 w-1 bg-white/50 blur-[2px]"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <a href="#links" class="flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-orange-500/50 rounded-lg hover:bg-orange-500/20 transition-all text-orange-400 font-bold mx-4">
+                    <span class="material-symbols-outlined">link</span>
+                    IR PARA LINKS
+                </a>
+
+                <button class="hidden md:flex items-center gap-2 px-3 py-1.5 bg-white/10 hover:bg-white/20 border border-white/10 rounded-md text-xs font-bold text-white transition-all" onclick="downloadHTML()">
+                    <span class="material-symbols-outlined text-sm">download</span>
+                    Baixar Código
+                </button>
             </div>
         </div>
     </nav>
 
     <header class="relative overflow-hidden pt-12 pb-10 border-b border-white/5 bg-gradient-to-b from-[#0f172a] to-[#0b1120]">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none"></div>
-        
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-6">
                     <span class="relative flex h-2 w-2">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                       <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                     </span>
-                    Currículo Atualizado 2025
+                    Versão Corrigida
                 </div>
-                
-                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">
-                    Domine a <br><span class="cyber-gradient-text">Cibersegurança</span>
-                </h2>
-                
-                <p class="text-slate-400 text-lg mb-8 leading-relaxed max-w-xl">
-                    Um roadmap exaustivo do básico ao avançado. Mescle teoria acadêmica com a prática de mercado. 
-                    Acesse abaixo as principais plataformas de ensino gratuitas e trilhas recomendadas.
-                </p>
-
-                <div class="space-y-4">
-                    <h3 class="text-sm font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
-                        <span class="material-symbols-outlined text-sky-500 text-base">link</span>
-                        Portais de Ensino & Trilhas
-                    </h3>
-                    
-                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-                        <button class="col-span-2 sm:col-span-1 flex items-center justify-center gap-2 p-3 bg-white text-slate-900 border border-white hover:bg-slate-200 rounded-lg transition-all font-bold shadow-lg shadow-white/10" onclick="downloadHTML()">
-                            <span class="material-symbols-outlined">download</span>
-                            Baixar HTML
-                        </button>
-
-                        <a href="https://github.com/arthurspk/guiadecybersecurity" target="_blank" class="flex items-center gap-2 p-3 bg-slate-800/50 hover:bg-slate-700/80 border border-white/10 rounded-lg transition-all group">
-                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" class="w-5 h-5 invert opacity-70 group-hover:opacity-100 transition-opacity" alt="GitHub">
-                            <span class="text-xs font-medium text-slate-300 group-hover:text-white">Guia Arthurspk</span>
-                        </a>
-
-                        <a href="https://learn.mit.edu/c/topic/cybersecurity" target="_blank" class="flex items-center gap-2 p-3 bg-red-900/20 hover:bg-red-900/30 border border-red-500/20 rounded-lg transition-all group">
-                            <span class="material-symbols-outlined text-red-400 text-lg">school</span>
-                            <span class="text-xs font-medium text-red-200 group-hover:text-white">MIT Topics</span>
-                        </a>
-                        
-                        <a href="https://hackersdobem.org.br/" target="_blank" class="flex items-center gap-2 p-3 bg-emerald-900/20 hover:bg-emerald-900/30 border border-emerald-500/20 rounded-lg transition-all group">
-                            <span class="material-symbols-outlined text-emerald-400 text-lg">terminal</span>
-                            <span class="text-xs font-medium text-emerald-200 group-hover:text-white">Hackers do Bem</span>
-                        </a>
-
-                        <a href="https://www.coursera.org/programs/ciberseguranca-2025-am06j" target="_blank" class="flex items-center gap-2 p-3 bg-blue-900/20 hover:bg-blue-900/30 border border-blue-500/20 rounded-lg transition-all group">
-                            <span class="material-symbols-outlined text-blue-400 text-lg">workspace_premium</span>
-                            <span class="text-xs font-medium text-blue-200 group-hover:text-white">Coursera 2025</span>
-                        </a>
-
-                        <a href="https://app.perusall.com/courses/cybersecurity-for-critical-urban-infrastructure-2/_/dashboard/startup" target="_blank" class="flex items-center gap-2 p-3 bg-orange-900/20 hover:bg-orange-900/30 border border-orange-500/20 rounded-lg transition-all group">
-                            <span class="material-symbols-outlined text-orange-400 text-lg">factory</span>
-                            <span class="text-xs font-medium text-orange-200 group-hover:text-white">Infra Crítica</span>
-                        </a>
-
-                        <a href="https://web.dio.me/" target="_blank" class="flex items-center gap-2 p-3 bg-purple-900/20 hover:bg-purple-900/30 border border-purple-500/20 rounded-lg transition-all group">
-                            <span class="material-symbols-outlined text-purple-400 text-lg">code</span>
-                            <span class="text-xs font-medium text-purple-200 group-hover:text-white">DIO</span>
-                        </a>
-
-                        <a href="https://gerdau.ada.tech/trilhas" target="_blank" class="flex items-center gap-2 p-3 bg-pink-900/20 hover:bg-pink-900/30 border border-pink-500/20 rounded-lg transition-all group">
-                            <span class="material-symbols-outlined text-pink-400 text-lg">radio_button_unchecked</span>
-                            <span class="text-xs font-medium text-pink-200 group-hover:text-white">Ada Tech</span>
-                        </a>
-
-                        <a href="https://www.netacad.com/dashboard" target="_blank" class="flex items-center gap-2 p-3 bg-cyan-900/20 hover:bg-cyan-900/30 border border-cyan-500/20 rounded-lg transition-all group">
-                            <span class="material-symbols-outlined text-cyan-400 text-lg">lan</span>
-                            <span class="text-xs font-medium text-cyan-200 group-hover:text-white">Cisco NetAcad</span>
-                        </a>
-
-                        <a href="https://mundi.ifsul.edu.br/ava/" target="_blank" class="flex items-center gap-2 p-3 bg-indigo-900/20 hover:bg-indigo-900/30 border border-indigo-500/20 rounded-lg transition-all group">
-                            <span class="material-symbols-outlined text-indigo-400 text-lg">public</span>
-                            <span class="text-xs font-medium text-indigo-200 group-hover:text-white">Mundi IFSUL</span>
-                        </a>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="hidden lg:block relative group">
-                <div class="absolute -inset-1 bg-gradient-to-r from-sky-500 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900 h-[320px] flex items-center justify-center">
-                    <span class="material-symbols-outlined text-[150px] text-slate-700/50">shield_lock</span>
-                    
-                    <div class="absolute bottom-4 left-4 right-4 p-4 glass-panel rounded-xl border-l-4 border-sky-500">
-                        <p class="text-sky-400 text-xs font-mono mb-1">STATUS DO SISTEMA</p>
-                        <p class="text-white text-sm font-semibold">24 Módulos Carregados. Pronto para iniciar.</p>
-                    </div>
-                </div>
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">Domine a <br><span class="cyber-gradient-text">Cibersegurança</span></h2>
+                <p class="text-slate-400 text-lg mb-8">Roadmap completo. Role para baixo ou clique no botão laranja acima para ver os links úteis.</p>
             </div>
         </div>
     </header>
 
-    <main class="flex-grow max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 w-full">
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-12 w-full">
         
-        <div class="flex flex-wrap justify-center gap-4 mb-12 sticky top-24 z-40 py-2 rounded-xl backdrop-blur-sm">
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
             <button onclick="renderModules(1)" id="tab-1" class="tab-btn px-6 py-4 rounded-xl border font-semibold flex flex-col items-center min-w-[140px] group active border-sky-500 bg-sky-500/10 text-sky-400">
-                <span class="text-xs uppercase tracking-widest opacity-60 mb-1">Ano 01</span>
-                <span class="text-sm group-hover:text-white transition-colors">Fundamentos</span>
+                <span class="text-xs uppercase opacity-60 mb-1">Ano 01</span>
+                <span>Fundamentos</span>
             </button>
-            <button onclick="renderModules(2)" id="tab-2" class="tab-btn px-6 py-4 rounded-xl border border-transparent bg-slate-800/50 text-slate-400 font-semibold flex flex-col items-center min-w-[140px] group">
-                <span class="text-xs uppercase tracking-widest opacity-60 mb-1">Ano 02</span>
-                <span class="text-sm group-hover:text-white transition-colors">Defesa & IAM</span>
+            <button onclick="renderModules(2)" id="tab-2" class="tab-btn px-6 py-4 rounded-xl border border-transparent bg-slate-800/50 text-slate-400 font-semibold flex flex-col items-center min-w-[140px]">
+                <span class="text-xs uppercase opacity-60 mb-1">Ano 02</span>
+                <span>Defesa & IAM</span>
             </button>
-            <button onclick="renderModules(3)" id="tab-3" class="tab-btn px-6 py-4 rounded-xl border border-transparent bg-slate-800/50 text-slate-400 font-semibold flex flex-col items-center min-w-[140px] group">
-                <span class="text-xs uppercase tracking-widest opacity-60 mb-1">Ano 03</span>
-                <span class="text-sm group-hover:text-white transition-colors">Infra & Offense</span>
+            <button onclick="renderModules(3)" id="tab-3" class="tab-btn px-6 py-4 rounded-xl border border-transparent bg-slate-800/50 text-slate-400 font-semibold flex flex-col items-center min-w-[140px]">
+                <span class="text-xs uppercase opacity-60 mb-1">Ano 03</span>
+                <span>Infra & Offense</span>
             </button>
-            <button onclick="renderModules(4)" id="tab-4" class="tab-btn px-6 py-4 rounded-xl border border-transparent bg-slate-800/50 text-slate-400 font-semibold flex flex-col items-center min-w-[140px] group">
-                <span class="text-xs uppercase tracking-widest opacity-60 mb-1">Ano 04</span>
-                <span class="text-sm group-hover:text-white transition-colors">Avançado</span>
+            <button onclick="renderModules(4)" id="tab-4" class="tab-btn px-6 py-4 rounded-xl border border-transparent bg-slate-800/50 text-slate-400 font-semibold flex flex-col items-center min-w-[140px]">
+                <span class="text-xs uppercase opacity-60 mb-1">Ano 04</span>
+                <span>Avançado</span>
             </button>
         </div>
 
-        <div id="modules-container" class="grid md:grid-cols-2 gap-6 min-h-[500px]">
-            </div>
+        <div id="modules-container" class="grid md:grid-cols-2 gap-6 min-h-[500px]"></div>
 
-        <section class="mt-24 pt-10 border-t border-slate-800">
-            <div class="flex items-center gap-3 mb-8">
-                <span class="material-symbols-outlined text-yellow-500 text-3xl">library_books</span>
-                <h3 class="text-2xl font-bold text-white">Biblioteca Essencial</h3>
-            </div>
-            
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-                <a href="https://google.com/search?q=How+Cybersecurity+Really+Works+Sam+Grubb" target="_blank" class="group block">
-                    <div class="aspect-[2/3] bg-slate-800 rounded-lg overflow-hidden relative shadow-lg group-hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://covers.openlibrary.org/b/isbn/9781718501287-L.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" alt="Capa do Livro" onerror="this.src='https://placehold.co/400x600/1e293b/FFF?text=Capa+Nao+Disponivel'">
-                    </div>
-                    <p class="mt-3 text-sm font-semibold text-slate-300 group-hover:text-white leading-tight">How Cybersecurity Really Works</p>
-                </a>
-                
-                <a href="https://google.com/search?q=Cybersecurity+for+Beginners+Raef+Meeuwisse" target="_blank" class="group block">
-                    <div class="aspect-[2/3] bg-slate-800 rounded-lg overflow-hidden relative shadow-lg group-hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://covers.openlibrary.org/b/isbn/9781911452034-L.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" alt="Capa do Livro" onerror="this.src='https://placehold.co/400x600/1e293b/FFF?text=Capa+Nao+Disponivel'">
-                    </div>
-                    <p class="mt-3 text-sm font-semibold text-slate-300 group-hover:text-white leading-tight">Cybersecurity for Beginners</p>
-                </a>
-                
-                <a href="https://google.com/search?q=The+Phoenix+Project+Gene+Kim" target="_blank" class="group block">
-                    <div class="aspect-[2/3] bg-slate-800 rounded-lg overflow-hidden relative shadow-lg group-hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://covers.openlibrary.org/b/isbn/9780988262591-L.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" alt="Capa do Livro" onerror="this.src='https://placehold.co/400x600/1e293b/FFF?text=Capa+Nao+Disponivel'">
-                    </div>
-                    <p class="mt-3 text-sm font-semibold text-slate-300 group-hover:text-white leading-tight">O Projeto Fênix</p>
-                </a>
-
-                <a href="https://google.com/search?q=Analise+de+Trafego+em+Redes+TCP+IP+Joao+Eriberto" target="_blank" class="group block">
-                    <div class="aspect-[2/3] bg-slate-800 rounded-lg overflow-hidden relative shadow-lg group-hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://covers.openlibrary.org/b/isbn/9788575223963-L.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" alt="Capa do Livro" onerror="this.src='https://placehold.co/400x600/1e293b/FFF?text=Analise+de+Trafego'">
-                    </div>
-                    <p class="mt-3 text-sm font-semibold text-slate-300 group-hover:text-white leading-tight">Análise de Tráfego TCP/IP</p>
-                </a>
-
-                <a href="https://google.com/search?q=Defensive+Security+Handbook+Amanda+Berlin" target="_blank" class="group block">
-                    <div class="aspect-[2/3] bg-slate-800 rounded-lg overflow-hidden relative shadow-lg group-hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://covers.openlibrary.org/b/isbn/9781491960387-L.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" alt="Capa do Livro" onerror="this.src='https://placehold.co/400x600/1e293b/FFF?text=Capa+Nao+Disponivel'">
-                    </div>
-                    <p class="mt-3 text-sm font-semibold text-slate-300 group-hover:text-white leading-tight">Defensive Security Handbook</p>
-                </a>
-
-                <a href="https://google.com/search?q=CISSP+All+in+One+Exam+Guide+Shon+Harris" target="_blank" class="group block">
-                    <div class="aspect-[2/3] bg-slate-800 rounded-lg overflow-hidden relative shadow-lg group-hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://covers.openlibrary.org/b/isbn/9781260467376-L.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" alt="Capa do Livro" onerror="this.src='https://placehold.co/400x600/1e293b/FFF?text=Capa+Nao+Disponivel'">
-                    </div>
-                    <p class="mt-3 text-sm font-semibold text-slate-300 group-hover:text-white leading-tight">CISSP All-in-One</p>
-                </a>
-            </div>
-        </section>
-
-        <section id="links" class="scroll-mt-28 mt-24 pt-10 border-t border-slate-800">
-            <div class="flex items-center gap-3 mb-8">
-                <span class="material-symbols-outlined text-sky-500 text-3xl">link</span>
+        <section id="links" class="mt-24 pt-10 border-t border-slate-800 relative">
+            <div class="absolute inset-0 bg-sky-900/5 -z-10 rounded-xl"></div> <div class="flex items-center gap-3 mb-8">
+                <span class="material-symbols-outlined text-orange-400 text-3xl">link</span>
                 <h3 class="text-2xl font-bold text-white">Links & Ferramentas Essenciais</h3>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <a href="https://www.virustotal.com/" target="_blank" class="glass-panel p-5 rounded-lg hover:bg-slate-800 transition-all group flex items-start gap-4 border border-white/5 hover:border-blue-500/30">
-                    <div class="bg-blue-500/10 p-2 rounded-lg text-blue-400 shrink-0">
-                        <span class="material-symbols-outlined">bug_report</span>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">VirusTotal</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Analise arquivos e URLs suspeitas com dezenas de antivírus simultaneamente.</p>
-                    </div>
+                <a href="https://www.virustotal.com/" target="_blank" class="glass-panel p-5 rounded-lg hover:bg-slate-800 transition-all border border-white/5 hover:border-blue-500/30">
+                    <div class="bg-blue-500/10 p-2 rounded-lg text-blue-400 w-min mb-3"><span class="material-symbols-outlined">bug_report</span></div>
+                    <h4 class="font-bold text-white mb-1">VirusTotal</h4>
+                    <p class="text-xs text-slate-400">Análise de malware online.</p>
                 </a>
 
-                <a href="https://haveibeenpwned.com/" target="_blank" class="glass-panel p-5 rounded-lg hover:bg-slate-800 transition-all group flex items-start gap-4 border border-white/5 hover:border-red-500/30">
-                    <div class="bg-red-500/10 p-2 rounded-lg text-red-400 shrink-0">
-                        <span class="material-symbols-outlined">password</span>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-white mb-1 group-hover:text-red-300 transition-colors">Have I Been Pwned</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Verifique se seus dados pessoais vazaram em incidentes de segurança.</p>
-                    </div>
+                <a href="https://haveibeenpwned.com/" target="_blank" class="glass-panel p-5 rounded-lg hover:bg-slate-800 transition-all border border-white/5 hover:border-red-500/30">
+                    <div class="bg-red-500/10 p-2 rounded-lg text-red-400 w-min mb-3"><span class="material-symbols-outlined">password</span></div>
+                    <h4 class="font-bold text-white mb-1">Have I Been Pwned</h4>
+                    <p class="text-xs text-slate-400">Verificação de vazamento de dados.</p>
                 </a>
 
-                <a href="https://attack.mitre.org/" target="_blank" class="glass-panel p-5 rounded-lg hover:bg-slate-800 transition-all group flex items-start gap-4 border border-white/5 hover:border-orange-500/30">
-                    <div class="bg-orange-500/10 p-2 rounded-lg text-orange-400 shrink-0">
-                        <span class="material-symbols-outlined">grid_view</span>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-white mb-1 group-hover:text-orange-300 transition-colors">MITRE ATT&CK</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Base de conhecimento global sobre táticas e técnicas de adversários.</p>
-                    </div>
+                <a href="https://attack.mitre.org/" target="_blank" class="glass-panel p-5 rounded-lg hover:bg-slate-800 transition-all border border-white/5 hover:border-orange-500/30">
+                    <div class="bg-orange-500/10 p-2 rounded-lg text-orange-400 w-min mb-3"><span class="material-symbols-outlined">grid_view</span></div>
+                    <h4 class="font-bold text-white mb-1">MITRE ATT&CK</h4>
+                    <p class="text-xs text-slate-400">Base de conhecimento de táticas.</p>
                 </a>
 
-                <a href="https://www.shodan.io/" target="_blank" class="glass-panel p-5 rounded-lg hover:bg-slate-800 transition-all group flex items-start gap-4 border border-white/5 hover:border-emerald-500/30">
-                    <div class="bg-emerald-500/10 p-2 rounded-lg text-emerald-400 shrink-0">
-                        <span class="material-symbols-outlined">radar</span>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Shodan</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">O motor de busca para dispositivos conectados à Internet (IoT).</p>
-                    </div>
+                <a href="https://www.shodan.io/" target="_blank" class="glass-panel p-5 rounded-lg hover:bg-slate-800 transition-all border border-white/5 hover:border-emerald-500/30">
+                    <div class="bg-emerald-500/10 p-2 rounded-lg text-emerald-400 w-min mb-3"><span class="material-symbols-outlined">radar</span></div>
+                    <h4 class="font-bold text-white mb-1">Shodan</h4>
+                    <p class="text-xs text-slate-400">Busca de dispositivos IoT.</p>
                 </a>
             </div>
         </section>
 
     </main>
 
-    <footer class="border-t border-white/5 py-8 mt-12 bg-[#0b1120]">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-slate-500 text-sm">© 2025 CyberMastery Roadmap. Baseado em currículos MIT, CompTIA e NIST.</p>
-        </div>
+    <footer class="border-t border-white/5 py-8 mt-12 bg-[#0b1120] text-center text-slate-500 text-sm">
+        © 2025 CyberMastery Roadmap
     </footer>
 
     <script>
-        // Dados Estruturados dos Módulos (1-24)
         const curriculum = {
             1: [
-                {id: 1, title: "Módulo 1: Introdução à Gestão de Riscos", desc: "Análise de impacto (BIA), mitigação, transferência e aceitação de risco. Matriz de probabilidade x impacto e frameworks (NIST SP 800-30).", practice: "Criar uma matriz de risco 5x5 para uma pequena empresa de e-commerce fictícia.", icon: "analytics"},
-                {id: 2, title: "Módulo 2: Conceitos Básicos de Segurança", desc: "Tríade CIA (Confidencialidade, Integridade, Disponibilidade), Autenticação vs Autorização (AAA), Não-repúdio e Defesa em Profundidade.", practice: "Configurar permissões de arquivo (chmod) e grupos (chown) no Linux para demonstrar controle de acesso.", icon: "verified_user"},
-                {id: 3, title: "Módulo 3: Função do Governo: Lei & Normas", desc: "LGPD/GDPR, ISO 27001/27002, NIST Cybersecurity Framework. Compliance regulatório e o papel do CISO.", practice: "Mapear 3 controles da ISO 27001 (Anexo A) para mitigar riscos físicos em um escritório.", icon: "gavel"},
-                {id: 4, title: "Módulo 4: Ameaças e Vulnerabilidades", desc: "Tipos de Malware (Ransomware, Trojan), Phishing, APTs, Zero-days. Uso de bancos de dados CVE e métricas CVSS.", practice: "Pesquisar um CVE recente de alta criticidade no NVD (NIST) e explicar sua exploração.", icon: "bug_report"},
-                {id: 5, title: "Módulo 5: Segurança em Infraestrutura Crítica", desc: "SCADA, ICS, Modelo Purdue. Proteção de redes de energia, água e transporte. Foco no curso MIT/Perusall.", practice: "Analisar o caso Stuxnet e identificar quais camadas do modelo OSI foram exploradas.", icon: "factory", link: "https://app.perusall.com/courses/cybersecurity-for-critical-urban-infrastructure-2/_/dashboard/startup"},
-                {id: 6, title: "Módulo 6: Conceitos de IAM (Identidade)", desc: "Princípio do menor privilégio (PoLP), Ciclo de vida da identidade, MFA (Multi-Factor Authentication), SSO.", practice: "Desenhar um diagrama de fluxo de provisionamento e desprovisionamento de usuário seguro.", icon: "badge"}
+                {id: 1, title: "Módulo 1: Gestão de Riscos", desc: "Análise de impacto (BIA) e matrizes de risco.", practice: "Criar Matriz de Risco 5x5.", icon: "analytics"},
+                {id: 2, title: "Módulo 2: Conceitos Básicos", desc: "Tríade CIA, AAA e Defesa em Profundidade.", practice: "Configurar permissões chmod no Linux.", icon: "verified_user"},
+                {id: 3, title: "Módulo 3: Leis e Normas", desc: "LGPD, ISO 27001 e NIST.", practice: "Mapear controles da ISO 27001.", icon: "gavel"},
+                {id: 4, title: "Módulo 4: Ameaças", desc: "Malware, Phishing e CVEs.", practice: "Pesquisar CVE no banco NVD.", icon: "bug_report"},
+                {id: 5, title: "Módulo 5: Infra Crítica", desc: "SCADA e Modelo Purdue.", practice: "Analisar Stuxnet.", icon: "factory", link: "https://app.perusall.com/courses/cybersecurity-for-critical-urban-infrastructure-2/_/dashboard/startup"},
+                {id: 6, title: "Módulo 6: IAM", desc: "Ciclo de identidade e MFA.", practice: "Diagrama de provisionamento.", icon: "badge"}
             ],
             2: [
-                {id: 7, title: "Módulo 7: Camadas e Tecnologia de IAM", desc: "Protocolos de autenticação: Kerberos, LDAP, SAML, OIDC, OAuth 2.0. Diferença entre Autenticação e Federação.", practice: "Instalar e explorar a estrutura básica de um servidor OpenLDAP ou Active Directory em VM.", icon: "account_tree"},
-                {id: 8, title: "Módulo 8: Prep. Trabalho Gestão de Riscos", desc: "Carreira em GRC (Governance, Risk, Compliance). Auditoria de sistemas, elaboração de políticas e relatórios executivos.", practice: "Simular uma mini-auditoria de uma 'Política de Senhas' identificando falhas de conformidade.", icon: "work_history"},
-                {id: 9, title: "Módulo 9: Introdução à Segurança Defensiva", desc: "Blue Team mindset, Hardening de ativos, Segurança física, Detecção de intrusão e Honeytokens.", practice: "Configurar um 'Canary Token' gratuito e disparar um alerta ao acessá-lo.", icon: "shield"},
-                {id: 10, title: "Módulo 10: Criptografia", desc: "Simétrica (AES), Assimétrica (RSA/ECC), Hashing (SHA-256), PKI, Certificados Digitais e Esteganografia.", practice: "Usar GPG para criptografar um arquivo de texto e verificar a integridade via Hash.", icon: "vpn_key"},
-                {id: 11, title: "Módulo 11: Centro de Operações (SOC)", desc: "Estrutura de um SOC (Nível 1, 2, 3), SIEM, Log Management, Monitoramento em tempo real, Triagem de alertas.", practice: "Analisar logs de acesso do Apache (access.log) buscando padrões de varredura automatizada.", icon: "radar"},
-                {id: 12, title: "Módulo 12: Resposta a Incidentes (IR)", desc: "Ciclo de vida IR (NIST): Preparação, Detecção e Análise, Contenção, Erradicação, Recuperação, Lições Aprendidas.", practice: "Escrever um 'Playbook' passo-a-passo para resposta a um incidente de Ransomware.", icon: "emergency"}
+                {id: 7, title: "Módulo 7: Tecnologia IAM", desc: "Kerberos, SAML, OAuth 2.0.", practice: "Explorar OpenLDAP.", icon: "account_tree"},
+                {id: 8, title: "Módulo 8: Prep. GRC", desc: "Auditoria e Compliance.", practice: "Simular auditoria de senhas.", icon: "work_history"},
+                {id: 9, title: "Módulo 9: Defesa", desc: "Blue Team e Hardening.", practice: "Configurar Canary Token.", icon: "shield"},
+                {id: 10, title: "Módulo 10: Criptografia", desc: "AES, RSA, Hashing.", practice: "Criptografar com GPG.", icon: "vpn_key"},
+                {id: 11, title: "Módulo 11: SOC", desc: "SIEM e Monitoramento.", practice: "Analisar logs Apache.", icon: "radar"},
+                {id: 12, title: "Módulo 12: Incident Response", desc: "Ciclo de vida de resposta.", practice: "Playbook de Ransomware.", icon: "emergency"}
             ],
             3: [
-                {id: 13, title: "Módulo 13: Administração de Sistemas Seguros", desc: "Hardening de OS (Windows/Linux), Gerenciamento de Patches, Desativação de serviços desnecessários, GPOs.", practice: "Executar script de auditoria 'Lynis' em um servidor Linux e corrigir 3 falhas apontadas.", icon: "settings_system_daydream"},
-                {id: 14, title: "Módulo 14: Administração de Rede Segura", desc: "Firewalls (NGFW), IDS/IPS, VPNs, Segmentação (VLANs), DMZ, Segurança Wireless (WPA3).", practice: "Configurar regras de firewall (UFW/iptables) para bloquear todo tráfego exceto SSH e HTTP.", icon: "router"},
-                {id: 15, title: "Módulo 15: Segurança na Nuvem", desc: "Modelo de responsabilidade compartilhada (AWS/Azure), Cloud Security Posture, Serverless security.", practice: "Auditar configurações de um Bucket S3 (simulado) para garantir que não está público.", icon: "cloud"},
-                {id: 16, title: "Módulo 16: Prep. Trabalho Ops Segurança", desc: "Rotina de Analista de SOC. Uso de ferramentas de ticket, escalonamento e comunicação técnica.", practice: "Documentar um evento de 'Falso Positivo' em um relatório técnico formal.", icon: "assignment_ind"},
-                {id: 17, title: "Módulo 17: Intro à Segurança Ofensiva", desc: "Ethical Hacking, Red Team vs Blue Team, Cyber Kill Chain, Metodologia PTES, Reconhecimento (OSINT).", practice: "Realizar reconhecimento passivo (OSINT) em um domínio autorizado (ex: empresa fictícia).", icon: "swords"},
-                {id: 18, title: "Módulo 18: Testagem de Penetração Pt 1", desc: "Scanning e Enumeração. Uso de Nmap, Nessus/OpenVAS. Identificação de serviços e versões.", practice: "Mapear portas e serviços de uma máquina vulnerável (ex: Metasploitable) em laboratório isolado.", icon: "travel_explore"}
+                {id: 13, title: "Módulo 13: Admin Sistemas", desc: "Hardening Linux/Windows.", practice: "Audit com Lynis.", icon: "settings_system_daydream"},
+                {id: 14, title: "Módulo 14: Admin Redes", desc: "Firewalls e VPNs.", practice: "Regras UFW/iptables.", icon: "router"},
+                {id: 15, title: "Módulo 15: Cloud Security", desc: "AWS/Azure Security.", practice: "Auditoria Bucket S3.", icon: "cloud"},
+                {id: 16, title: "Módulo 16: Prep. Ops", desc: "Rotina de Analista SOC.", practice: "Relatório de Falso Positivo.", icon: "assignment_ind"},
+                {id: 17, title: "Módulo 17: Intro Offensive", desc: "Kill Chain e OSINT.", practice: "Reconhecimento passivo.", icon: "swords"},
+                {id: 18, title: "Módulo 18: Pentest I", desc: "Nmap e Nessus.", practice: "Mapear serviços vulneráveis.", icon: "travel_explore"}
             ],
             4: [
-                {id: 19, title: "Módulo 19: Testagem de Penetração Pt 2", desc: "Exploração e Pós-Exploração. Metasploit, Web App Hacking (OWASP Top 10), Privilege Escalation.", practice: "Explorar uma vulnerabilidade SQL Injection básica em ambiente controlado (DVWA).", icon: "terminal"},
-                {id: 20, title: "Módulo 20: Engenharia Social", desc: "Psicologia da persuasão (Cialdini), Phishing, Vishing, Pretexting, Dumpster Diving. Conscientização.", practice: "Criar o texto de um email de phishing educativo convincente para treinamento corporativo.", icon: "person_alert"},
-                {id: 21, title: "Módulo 21: Inteligência Artificial", desc: "IA para defesa (detecção de anomalias) e ataques adversariais (Deepfakes, Poisoning). LLMs em Cyber.", practice: "Testar detecção de anomalias em logs usando uma ferramenta básica de ML ou script Python.", icon: "psychology"},
-                {id: 22, title: "Módulo 22: Política, Privacidade e Governança", desc: "Governança de dados, DPO, Ética Digital, Privacy by Design e estratégias de Cyber Resilience.", practice: "Escrever um esboço de 'Política de Privacidade' e 'Termos de Uso' para um aplicativo.", icon: "policy"},
-                {id: 23, title: "Módulo 23: Risco de OT e IoT", desc: "Segurança em IoT (Internet das Coisas) e Tecnologia Operacional. Firmware Security, MQTT, Zigbee.", practice: "Analisar tráfego MQTT ou capturar/emular firmware de dispositivo IoT básico.", icon: "sensors"},
-                {id: 24, title: "Módulo 24: Prep. Trabalho Ops Ofensiva", desc: "Carreira em Red Team/Pentest. Relatórios executivos vs técnicos. Certificações (OSCP, eJPT).", practice: "Elaborar um relatório final de Pentest completo fictício (Sumário Executivo + Detalhes Técnicos).", icon: "workspace_premium"}
+                {id: 19, title: "Módulo 19: Pentest II", desc: "Metasploit e Web App.", practice: "SQL Injection básico.", icon: "terminal"},
+                {id: 20, title: "Módulo 20: Eng. Social", desc: "Phishing e Persuasão.", practice: "Email de phishing educativo.", icon: "person_alert"},
+                {id: 21, title: "Módulo 21: IA em Cyber", desc: "Detecção e Adversarial ML.", practice: "Detectar anomalias em logs.", icon: "psychology"},
+                {id: 22, title: "Módulo 22: Governança", desc: "DPO e Privacidade.", practice: "Escrever Política de Privacidade.", icon: "policy"},
+                {id: 23, title: "Módulo 23: IoT & OT", desc: "MQTT e Firmware.", practice: "Analisar tráfego MQTT.", icon: "sensors"},
+                {id: 24, title: "Módulo 24: Prep. Red Team", desc: "Relatórios e Certificações.", practice: "Relatório final de Pentest.", icon: "workspace_premium"}
             ]
         };
 
-        // Carregar Estado
         let progress = JSON.parse(localStorage.getItem('cyberMasteryProgress')) || {};
 
         function renderModules(year) {
-            // Atualizar abas
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('active', 'border-sky-500', 'bg-sky-500/10', 'text-sky-400');
                 btn.classList.add('bg-slate-800/50', 'text-slate-400', 'border-transparent');
             });
             const activeBtn = document.getElementById(`tab-${year}`);
-            activeBtn.classList.remove('bg-slate-800/50', 'text-slate-400', 'border-transparent');
-            activeBtn.classList.add('active', 'border-sky-500', 'bg-sky-500/10', 'text-sky-400');
+            if(activeBtn) {
+                activeBtn.classList.remove('bg-slate-800/50', 'text-slate-400', 'border-transparent');
+                activeBtn.classList.add('active', 'border-sky-500', 'bg-sky-500/10', 'text-sky-400');
+            }
 
             const container = document.getElementById('modules-container');
             const data = curriculum[year];
@@ -408,103 +236,49 @@
             data.forEach(mod => {
                 const isChecked = progress[mod.id] ? 'checked' : '';
                 const completedStyle = isChecked ? 'border-sky-500/40 bg-slate-800/80' : 'border-white/5';
-                
-                let linkHtml = '';
-                if(mod.link) {
-                    linkHtml = `
-                        <a href="${mod.link}" target="_blank" class="mt-3 inline-flex items-center gap-1 text-xs text-orange-400 hover:text-orange-300 font-semibold border border-orange-500/30 px-2 py-1 rounded bg-orange-500/10 transition-colors">
-                            <span class="material-symbols-outlined text-[14px]">open_in_new</span> Acessar Curso Infra Crítica
-                        </a>
-                    `;
-                }
+                let linkHtml = mod.link ? `<a href="${mod.link}" target="_blank" class="mt-3 inline-flex items-center gap-1 text-xs text-orange-400 hover:text-orange-300 font-semibold border border-orange-500/30 px-2 py-1 rounded bg-orange-500/10 transition-colors"><span class="material-symbols-outlined text-[14px]">open_in_new</span> Acessar Curso</a>` : '';
 
                 html += `
                     <div class="glass-panel rounded-xl p-6 relative group transition-all duration-300 hover:bg-slate-800/60 ${completedStyle}">
-                        <div class="absolute -top-3 -right-3 w-8 h-8 bg-slate-900 rounded-lg border border-slate-700 flex items-center justify-center font-mono text-xs text-slate-500 font-bold shadow-xl z-10">
-                            ${mod.id}
-                        </div>
-                        
+                        <div class="absolute -top-3 -right-3 w-8 h-8 bg-slate-900 rounded-lg border border-slate-700 flex items-center justify-center font-mono text-xs text-slate-500 font-bold shadow-xl z-10">${mod.id}</div>
                         <div class="flex items-start gap-5">
-                            <div class="pt-1 shrink-0">
-                                <input type="checkbox" class="cyber-checkbox" id="mod-${mod.id}" onchange="toggleModule(${mod.id}, ${year})" ${isChecked}>
-                            </div>
-                            
+                            <div class="pt-1 shrink-0"><input type="checkbox" class="cyber-checkbox" id="mod-${mod.id}" onchange="toggleModule(${mod.id}, ${year})" ${isChecked}></div>
                             <div class="flex-1">
-                                <div class="flex items-center gap-2 mb-2">
-                                    <span class="material-symbols-outlined text-sky-400 group-hover:text-sky-300 transition-colors">${mod.icon}</span>
-                                    <h4 class="text-lg font-bold text-white group-hover:text-sky-200 transition-colors">${mod.title}</h4>
-                                </div>
-                                
-                                <p class="text-slate-400 text-sm mb-4 leading-relaxed pl-1">
-                                    ${mod.desc}
-                                </p>
-                                
+                                <div class="flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-sky-400">${mod.icon}</span><h4 class="text-lg font-bold text-white">${mod.title}</h4></div>
+                                <p class="text-slate-400 text-sm mb-4 leading-relaxed pl-1">${mod.desc}</p>
                                 <div class="bg-slate-900/60 rounded-lg p-3 border-l-2 border-emerald-500">
-                                    <p class="text-[10px] font-bold text-emerald-400 uppercase mb-1 flex items-center gap-1 tracking-wider">
-                                        <span class="material-symbols-outlined text-[12px]">terminal</span>
-                                        Prática (Hands-on)
-                                    </p>
-                                    <p class="text-xs text-slate-300 font-mono">
-                                        ${mod.practice}
-                                    </p>
+                                    <p class="text-[10px] font-bold text-emerald-400 uppercase mb-1 flex items-center gap-1 tracking-wider"><span class="material-symbols-outlined text-[12px]">terminal</span> Prática</p>
+                                    <p class="text-xs text-slate-300 font-mono">${mod.practice}</p>
                                 </div>
                                 ${linkHtml}
                             </div>
                         </div>
-                    </div>
-                `;
+                    </div>`;
             });
             container.innerHTML = html;
         }
 
         function toggleModule(id, year) {
-            if (progress[id]) {
-                delete progress[id];
-            } else {
-                progress[id] = true;
-            }
+            progress[id] ? delete progress[id] : progress[id] = true;
             localStorage.setItem('cyberMasteryProgress', JSON.stringify(progress));
-            updateGlobalProgress();
             renderModules(year);
         }
 
-        function updateGlobalProgress() {
-            const totalModules = 24;
-            const completed = Object.keys(progress).length;
-            const percentage = Math.round((completed / totalModules) * 100);
-            
-            document.getElementById('header-progress-text').innerText = `${percentage}%`;
-            document.getElementById('header-progress-bar').style.width = `${percentage}%`;
-        }
-
         function downloadHTML() {
-            // Clona o elemento raiz
             const clone = document.documentElement.cloneNode(true);
-            
-            // Retorna o HTML completo
             const htmlContent = "<!DOCTYPE html>\n" + clone.outerHTML;
-            
-            // Cria o blob
             const blob = new Blob([htmlContent], {type: 'text/html'});
             const url = URL.createObjectURL(blob);
-            
-            // Cria link temporário e clica
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'roadmap-ciberseguranca.html';
+            a.download = 'roadmap-ciberseguranca-final.html';
             document.body.appendChild(a);
             a.click();
-            
-            // Limpa
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
         }
 
-        // Init
-        window.addEventListener('DOMContentLoaded', () => {
-            renderModules(1);
-            updateGlobalProgress();
-        });
+        window.addEventListener('DOMContentLoaded', () => { renderModules(1); });
     </script>
 </body>
 </html>
