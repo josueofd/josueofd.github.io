@@ -1,660 +1,182 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roadmap CyberMastery 2025</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Josué OFD | Cibersegurança</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        :root {
-            --bg-body: #0f111a;
-            --bg-card: #161b22;
-            --bg-header: #0d1117;
-            --accent: #238636;
-            --accent-hover: #2ea043;
-            --text-main: #c9d1d9;
-            --text-muted: #8b949e;
-            --border: #30363d;
-            --cyan: #58a6ff;
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0b1120; 
+            color: #e2e8f0; 
+            scroll-behavior: smooth;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
         
-        body { background-color: var(--bg-body); color: var(--text-main); line-height: 1.6; }
-        
-        /* Header */
-        header {
-            background-color: var(--bg-header);
-            border-bottom: 1px solid var(--border);
-            padding: 2rem;
-            text-align: center;
+        /* Efeito de Vidro */
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
         }
 
-        h1 { color: #fff; font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .subtitle { color: var(--text-muted); max-width: 800px; margin: 0 auto 1.5rem auto; }
-
-        /* Progress Bar */
-        .progress-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #21262d;
-            border-radius: 10px;
-            height: 20px;
-            overflow: hidden;
-            position: relative;
-        }
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent), var(--cyan));
-            width: 0%;
-            transition: width 0.5s ease;
-        }
-        .progress-text {
-            text-align: center;
-            font-size: 0.9rem;
-            margin-top: 5px;
-            color: var(--cyan);
+        /* Gradiente de Texto Cyberpunk */
+        .cyber-gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* Resource Links */
-        .resources {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: #12141c;
-        }
-        .btn-link {
-            text-decoration: none;
-            color: white;
-            background: #21262d;
-            border: 1px solid var(--border);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .btn-link:hover { border-color: var(--cyan); color: var(--cyan); }
-
-        /* Tabs */
-        .tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            padding: 1rem;
-            flex-wrap: wrap;
-        }
-        .tab-btn {
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--text-muted);
-            padding: 0.8rem 2rem;
-            cursor: pointer;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .tab-btn.active {
-            background: rgba(88, 166, 255, 0.1);
-            border-color: var(--cyan);
-            color: var(--cyan);
-        }
-
-        /* Grid Layout */
-        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
-        .module-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 1.5rem;
-            display: none; /* Hidden by default, shown by JS */
-        }
-        .module-grid.active { display: grid; }
-
-        /* Cards */
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            position: relative;
-            transition: transform 0.2s;
-        }
-        .card:hover { transform: translateY(-3px); border-color: var(--text-muted); }
-
-        .card-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
-        
-        /* Custom Checkbox */
-        .custom-checkbox {
-            appearance: none;
-            width: 24px;
-            height: 24px;
-            border: 2px solid var(--text-muted);
-            border-radius: 4px;
-            cursor: pointer;
-            flex-shrink: 0;
-            position: relative;
-        }
-        .custom-checkbox:checked { background-color: var(--accent); border-color: var(--accent); }
-        .custom-checkbox:checked::after {
-            content: '✔';
-            color: white;
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 14px;
-        }
-
-        .module-title { font-size: 1.1rem; font-weight: 600; color: #fff; }
-        .module-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; }
-        
-        .hands-on {
-            background: rgba(35, 134, 54, 0.1);
-            border-left: 3px solid var(--accent);
-            padding: 0.8rem;
-            border-radius: 0 4px 4px 0;
-            font-size: 0.85rem;
-        }
-        .hands-on strong { color: var(--accent); display: block; margin-bottom: 4px; }
-
-        .year-badge {
-            position: absolute;
-            top: 10px; right: 10px;
-            font-size: 0.7rem;
-            background: #21262d;
-            padding: 2px 6px;
-            border-radius: 4px;
-            color: var(--text-muted);
-        }
-
-        /* Library Section */
-        .library-section {
-            background: #0d1117;
-            padding: 3rem 1rem;
-            text-align: center;
-            border-top: 1px solid var(--border);
-        }
-        .book-grid {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-        .book {
-            width: 150px;
-            background: #161b22;
-            padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-        .book-placeholder {
-            width: 100%; height: 180px;
-            background: #21262d;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 2rem;
-        }
-        .book h4 { font-size: 0.9rem; color: #fff; }
-
-        footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.8rem; }
-
-        @media (max-width: 600px) {
-            .module-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 1.8rem; }
-        }
+        /* Scrollbar Personalizada */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
     </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col selection:bg-sky-500/30 overflow-x-hidden">
 
-<header>
-    <h1>Domine a Cibersegurança</h1>
-    <p class="subtitle">Roadmap exaustivo de 4 anos: Do Zero ao Avançado (Módulos 1-24). Mesclando teoria acadêmica (MIT) com prática de mercado.</p>
-    
-    <div class="progress-container">
-        <div class="progress-bar" id="progressBar"></div>
-    </div>
-    <div class="progress-text" id="progressText">0% Concluído</div>
-</header>
+<nav class="sticky top-0 z-50 glass-panel border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            
+            <div class="flex items-center gap-4">
+                <div class="p-2 bg-sky-500/10 rounded-lg border border-sky-500/20">
+                    <span class="material-symbols-outlined text-sky-400 text-3xl">terminal</span>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-white tracking-tight">Josué<span class="cyber-gradient-text">OFD</span></h1>
+                    <p class="text-[11px] text-slate-400 font-mono tracking-wider uppercase">Cibersegurança</p>
+                </div>
+            </div>
 
-<div class="resources">
-    <a href="https://github.com/arthurspk/guiadecybersecurity" target="_blank" class="btn-link">📁 Guia Arthurspk (GitHub)</a>
-    <a href="https://learn.mit.edu/c/topic/cybersecurity" target="_blank" class="btn-link">🎓 MIT Topics</a>
-    <a href="https://hackersdobem.org.br/" target="_blank" class="btn-link">🛡️ Hackers do Bem</a>
-    <a href="https://www.coursera.org/programs/ciberseguranca-2025-am06j" target="_blank" class="btn-link">⭐ Coursera 2025</a>
-    <a href="https://app.perusall.com/courses/cybersecurity-for-critical-urban-infrastructure-2/_/dashboard/startup" target="_blank" class="btn-link">🏙️ Infra Crítica (Perusall)</a>
-</div>
+            <div class="flex items-center gap-6">
+                <a href="roadmap-ciberseguranca.html" class="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-400 hover:bg-sky-500/20 transition-all group">
+                    <span class="material-symbols-outlined text-lg">map</span>
+                    <span class="font-semibold text-sm">Acessar Roadmap</span>
+                </a>
+                
+                <a href="https://github.com/josueofd" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+            </div>
 
-<div class="tabs">
-    <button class="tab-btn active" onclick="openTab('ano1')">ANO 01: Fundamentos</button>
-    <button class="tab-btn" onclick="openTab('ano2')">ANO 02: Defesa & IAM</button>
-    <button class="tab-btn" onclick="openTab('ano3')">ANO 03: Infra & Offense</button>
-    <button class="tab-btn" onclick="openTab('ano4')">ANO 04: Avançado</button>
-</div>
-
-<div class="container">
-
-    <div id="ano1" class="module-grid active">
-        <div class="card">
-            <span class="year-badge">Módulo 1</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod1" onchange="updateProgress()">
-                <div class="module-title">Introdução à Gestão de Riscos</div>
-            </div>
-            <p class="module-desc">Análise de impacto (BIA), mitigação, transferência e aceitação de risco. Matriz de probabilidade x impacto e frameworks (NIST SP 800-30).</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Criar uma matriz de risco 5x5 para uma pequena empresa de e-commerce fictícia, identificando ativos críticos.
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="year-badge">Módulo 2</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod2" onchange="updateProgress()">
-                <div class="module-title">Conceitos Básicos de Segurança</div>
-            </div>
-            <p class="module-desc">Tríade CIA (Confidencialidade, Integridade, Disponibilidade), Autenticação vs Autorização (AAA), Não-repúdio e Defesa em Profundidade.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Configurar permissões de arquivo (chmod) e grupos (chown) no Linux para demonstrar controle de acesso.
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="year-badge">Módulo 3</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod3" onchange="updateProgress()">
-                <div class="module-title">Função do Governo: Lei & Normas</div>
-            </div>
-            <p class="module-desc">LGPD/GDPR, ISO 27001/27002, NIST Cybersecurity Framework. Compliance regulatório e o papel do CISO.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Mapear 3 controles da ISO 27001 (Anexo A) para mitigar riscos físicos em um escritório.
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="year-badge">Módulo 4</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod4" onchange="updateProgress()">
-                <div class="module-title">Ameaças e Vulnerabilidades</div>
-            </div>
-            <p class="module-desc">Tipos de Malware (Ransomware, Trojan), Phishing, APTs, Zero-days. Uso de bancos de dados CVE e métricas CVSS.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Pesquisar um CVE recente de alta criticidade no NVD (NIST) e explicar sua exploração técnica.
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="year-badge">Módulo 5</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod5" onchange="updateProgress()">
-                <div class="module-title">Segurança em Infraestrutura Crítica</div>
-            </div>
-            <p class="module-desc">SCADA, ICS, Modelo Purdue. Proteção de redes de energia, água e transporte. Foco no curso MIT/Perusall.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Analisar o caso Stuxnet e identificar quais camadas do modelo OSI foram exploradas.
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="year-badge">Módulo 6</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod6" onchange="updateProgress()">
-                <div class="module-title">Conceitos de IAM (Identidade)</div>
-            </div>
-            <p class="module-desc">Princípio do menor privilégio (PoLP), Ciclo de vida da identidade, MFA (Multi-Factor Authentication), SSO.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Desenhar um diagrama de fluxo de provisionamento e desprovisionamento de usuário seguro.
-            </div>
         </div>
     </div>
+</nav>
 
-    <div id="ano2" class="module-grid">
-        <div class="card">
-            <span class="year-badge">Módulo 7</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod7" onchange="updateProgress()">
-                <div class="module-title">Camadas e Tecnologia de IAM</div>
+<main class="flex-grow flex items-center justify-center relative overflow-hidden py-20">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+        
+        <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-6">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                Disponível para Projetos 2025
             </div>
-            <p class="module-desc">Protocolos de autenticação: Kerberos, LDAP, SAML, OIDC, OAuth 2.0. Diferença entre Autenticação e Federação.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Instalar e explorar a estrutura básica de um servidor OpenLDAP ou Active Directory em VM.
+
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
+                Olá, eu sou <br>
+                <span class="cyber-gradient-text">Josué OFD</span>
+            </h1>
+            
+            <p class="text-slate-400 text-lg mb-8 leading-relaxed max-w-lg">
+                Especialista em Cibersegurança e Desenvolvimento. Construindo soluções seguras e explorando novas vulnerabilidades. Confira meu roadmap de estudos e projetos.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+                <a href="roadmap-ciberseguranca.html" class="flex items-center gap-3 px-6 py-4 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 text-white font-bold shadow-lg shadow-sky-500/20 hover:shadow-sky-500/40 hover:-translate-y-1 transition-all duration-300">
+                    <span class="material-symbols-outlined">rocket_launch</span>
+                    Ver Roadmap de Estudos
+                </a>
+
+                <a href="https://github.com/josueofd" target="_blank" class="flex items-center gap-3 px-6 py-4 rounded-xl glass-panel text-slate-300 hover:text-white hover:bg-slate-800 hover:-translate-y-1 transition-all duration-300">
+                    <i class="fab fa-github text-xl"></i>
+                    GitHub
+                </a>
+            </div>
+
+            <div class="mt-10 pt-8 border-t border-white/5 flex items-center gap-4 text-slate-500 text-sm font-mono">
+                <span class="flex items-center gap-2 hover:text-sky-400 transition-colors cursor-pointer">
+                    <span class="material-symbols-outlined text-base">mail</span>
+                    <a href="mailto:josueofd@gmail.com">josueofd@gmail.com</a>
+                </span>
             </div>
         </div>
 
-        <div class="card">
-            <span class="year-badge">Módulo 8</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod8" onchange="updateProgress()">
-                <div class="module-title">Prep. Trabalho Gestão de Riscos</div>
-            </div>
-            <p class="module-desc">Carreira em GRC (Governance, Risk, Compliance). Auditoria de sistemas, elaboração de políticas e relatórios executivos.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Simular uma mini-auditoria de uma 'Política de Senhas' identificando falhas de conformidade.
+        <div class="relative hidden lg:block">
+            <div class="glass-panel rounded-2xl p-8 border border-white/10 relative">
+                <div class="absolute -right-10 -top-10 text-slate-800/50">
+                    <span class="material-symbols-outlined text-[200px]">fingerprint</span>
+                </div>
+
+                <div class="relative z-10 space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="h-12 w-12 rounded-full bg-slate-800 flex items-center justify-center border border-slate-700">
+                            <span class="material-symbols-outlined text-sky-400">shield</span>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold">Blue Team</h3>
+                            <p class="text-xs text-slate-400 font-mono">Defesa & Monitoramento</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div class="h-12 w-12 rounded-full bg-slate-800 flex items-center justify-center border border-slate-700">
+                            <span class="material-symbols-outlined text-purple-400">terminal</span>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold">Red Team</h3>
+                            <p class="text-xs text-slate-400 font-mono">Pentest & Exploração</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div class="h-12 w-12 rounded-full bg-slate-800 flex items-center justify-center border border-slate-700">
+                            <span class="material-symbols-outlined text-emerald-400">code</span>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold">DevSecOps</h3>
+                            <p class="text-xs text-slate-400 font-mono">Automação Segura</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-white/5">
+                    <div class="flex justify-between text-xs text-slate-500 font-mono mb-2">
+                        <span>Carregando Conhecimento...</span>
+                        <span>100%</span>
+                    </div>
+                    <div class="w-full h-1 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full w-full bg-gradient-to-r from-sky-500 to-purple-500"></div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="card">
-            <span class="year-badge">Módulo 9</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod9" onchange="updateProgress()">
-                <div class="module-title">Intro à Segurança Defensiva</div>
-            </div>
-            <p class="module-desc">Blue Team mindset, Hardening de ativos, Segurança física, Detecção de intrusão e Honeytokens.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Configurar um 'Canary Token' gratuito e disparar um alerta ao acessá-lo.
-            </div>
-        </div>
+    </div>
+</main>
 
-        <div class="card">
-            <span class="year-badge">Módulo 10</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod10" onchange="updateProgress()">
-                <div class="module-title">Criptografia</div>
-            </div>
-            <p class="module-desc">Simétrica (AES), Assimétrica (RSA/ECC), Hashing (SHA-256), PKI, Certificados Digitais e Esteganografia.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Usar GPG para criptografar um arquivo de texto e verificar a integridade via Hash.
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="year-badge">Módulo 11</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod11" onchange="updateProgress()">
-                <div class="module-title">Centro de Operações (SOC)</div>
-            </div>
-            <p class="module-desc">Estrutura de um SOC (Nível 1, 2, 3), SIEM, Log Management, Monitoramento em tempo real, Triagem de alertas.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Analisar logs de acesso do Apache (access.log) buscando padrões de varredura automatizada.
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="year-badge">Módulo 12</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod12" onchange="updateProgress()">
-                <div class="module-title">Resposta a Incidentes (IR)</div>
-            </div>
-            <p class="module-desc">Ciclo de vida IR (NIST): Preparação, Detecção e Análise, Contenção, Erradicação, Recuperação, Lições Aprendidas.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Escrever um 'Playbook' passo-a-passo para resposta a um incidente de Ransomware.
-            </div>
+<footer class="border-t border-white/5 py-8 bg-[#0b1120]">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="text-slate-500 text-sm">© 2025 Josué OFD. Todos os direitos reservados.</p>
+        <div class="mt-2 flex justify-center gap-4 text-slate-600">
+            <a href="https://github.com/josueofd" class="hover:text-slate-400 transition-colors"><i class="fab fa-github"></i></a>
+            <a href="mailto:josueofd@gmail.com" class="hover:text-slate-400 transition-colors"><i class="fas fa-envelope"></i></a>
         </div>
     </div>
-
-    <div id="ano3" class="module-grid">
-        <div class="card">
-            <span class="year-badge">Módulo 13</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod13" onchange="updateProgress()">
-                <div class="module-title">Administração de Sistemas Seguros</div>
-            </div>
-            <p class="module-desc">Hardening de OS (Windows/Linux), Gerenciamento de Patches, Desativação de serviços desnecessários, GPOs.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Executar script de auditoria 'Lynis' em um servidor Linux e corrigir 3 falhas apontadas.
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="year-badge">Módulo 14</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod14" onchange="updateProgress()">
-                <div class="module-title">Administração de Rede Segura</div>
-            </div>
-            <p class="module-desc">Firewalls (NGFW), IDS/IPS, VPNs, Segmentação (VLANs), DMZ, Segurança Wireless (WPA3).</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Configurar regras de firewall (UFW/iptables) para bloquear todo tráfego exceto SSH e HTTP.
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="year-badge">Módulo 15</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod15" onchange="updateProgress()">
-                <div class="module-title">Segurança na Nuvem</div>
-            </div>
-            <p class="module-desc">Modelo de responsabilidade compartilhada (AWS/Azure), Cloud Security Posture, Serverless security.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Auditar configurações de um Bucket S3 (simulado) para garantir que não está público.
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="year-badge">Módulo 16</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod16" onchange="updateProgress()">
-                <div class="module-title">Prep. Trabalho Ops Segurança</div>
-            </div>
-            <p class="module-desc">Rotina de Analista de SOC. Uso de ferramentas de ticket, escalonamento e comunicação técnica.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Documentar um evento de 'Falso Positivo' em um relatório técnico formal.
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="year-badge">Módulo 17</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod17" onchange="updateProgress()">
-                <div class="module-title">Intro à Segurança Ofensiva</div>
-            </div>
-            <p class="module-desc">Ethical Hacking, Red Team vs Blue Team, Cyber Kill Chain, Metodologia PTES, Reconhecimento (OSINT).</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Realizar reconhecimento passivo (OSINT) em um domínio autorizado (ex: empresa fictícia).
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="year-badge">Módulo 18</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod18" onchange="updateProgress()">
-                <div class="module-title">Testagem de Penetração Pt 1</div>
-            </div>
-            <p class="module-desc">Scanning e Enumeração. Uso de Nmap, Nessus/OpenVAS. Identificação de serviços e versões.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Mapear portas e serviços de uma máquina vulnerável (ex: Metasploitable) em laboratório isolado.
-            </div>
-        </div>
-    </div>
-
-    <div id="ano4" class="module-grid">
-        <div class="card">
-            <span class="year-badge">Módulo 19</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod19" onchange="updateProgress()">
-                <div class="module-title">Testagem de Penetração Pt 2</div>
-            </div>
-            <p class="module-desc">Exploração e Pós-Exploração. Metasploit, Web App Hacking (OWASP Top 10), Privilege Escalation.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Explorar uma vulnerabilidade SQL Injection básica em ambiente controlado (DVWA).
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="year-badge">Módulo 20</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod20" onchange="updateProgress()">
-                <div class="module-title">Engenharia Social</div>
-            </div>
-            <p class="module-desc">Psicologia da persuasão (Cialdini), Phishing, Vishing, Pretexting, Dumpster Diving. Conscientização.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Criar o texto de um email de phishing educativo convincente para treinamento corporativo.
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="year-badge">Módulo 21</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod21" onchange="updateProgress()">
-                <div class="module-title">Inteligência Artificial</div>
-            </div>
-            <p class="module-desc">IA para defesa (detecção de anomalias) e ataques adversariais (Deepfakes, Poisoning). LLMs em Cyber.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Testar detecção de anomalias em logs usando uma ferramenta básica de ML ou script Python.
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="year-badge">Módulo 22</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod22" onchange="updateProgress()">
-                <div class="module-title">Política, Privacidade e Governança</div>
-            </div>
-            <p class="module-desc">Governança de dados, DPO, Ética Digital, Privacy by Design e estratégias de Cyber Resilience.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Escrever um esboço de 'Política de Privacidade' e 'Termos de Uso' para um aplicativo.
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="year-badge">Módulo 23</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod23" onchange="updateProgress()">
-                <div class="module-title">Risco de OT e IoT</div>
-            </div>
-            <p class="module-desc">Segurança em IoT (Internet das Coisas) e Tecnologia Operacional. Firmware Security, MQTT, Zigbee.</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Analisar tráfego MQTT ou capturar/emular firmware de dispositivo IoT básico.
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="year-badge">Módulo 24</span>
-            <div class="card-header">
-                <input type="checkbox" class="custom-checkbox" id="mod24" onchange="updateProgress()">
-                <div class="module-title">Prep. Trabalho Ops Ofensiva</div>
-            </div>
-            <p class="module-desc">Carreira em Red Team/Pentest. Relatórios executivos vs técnicos. Certificações (OSCP, eJPT).</p>
-            <div class="hands-on">
-                <strong>💻 PRÁTICA (HANDS-ON)</strong>
-                Elaborar um relatório final de Pentest completo fictício (Sumário Executivo + Detalhes Técnicos).
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="library-section">
-    <h2>📚 Biblioteca Essencial Revisada</h2>
-    <div class="book-grid">
-        <div class="book">
-            <div class="book-placeholder">📕</div>
-            <h4>How Cybersecurity Really Works</h4>
-        </div>
-        <div class="book">
-            <div class="book-placeholder">📘</div>
-            <h4>Defensive Security Handbook</h4>
-        </div>
-        <div class="book">
-            <div class="book-placeholder">📗</div>
-            <h4>CISSP All-in-One</h4>
-        </div>
-        <div class="book">
-            <div class="book-placeholder">📙</div>
-            <h4>Análise de Tráfego TCP/IP</h4>
-        </div>
-        <div class="book">
-            <div class="book-placeholder">📓</div>
-            <h4>O Projeto Fênix</h4>
-        </div>
-    </div>
-</div>
-
-<footer>
-    <p>Roadmap gerado via AI. Baseado em syllabus do Google, MIT e padrões de mercado.</p>
 </footer>
-
-<script>
-    // Tab Switching Logic
-    function openTab(tabName) {
-        var i;
-        var x = document.getElementsByClassName("module-grid");
-        var tabs = document.getElementsByClassName("tab-btn");
-        
-        for (i = 0; i < x.length; i++) {
-            x[i].classList.remove("active");
-        }
-        for (i = 0; i < tabs.length; i++) {
-            tabs[i].classList.remove("active");
-        }
-        
-        document.getElementById(tabName).classList.add("active");
-        
-        // Find the button that triggered this and add active class
-        const buttons = document.getElementsByTagName("button");
-        for (let btn of buttons) {
-            if(btn.getAttribute('onclick') === `openTab('${tabName}')`) {
-                btn.classList.add("active");
-            }
-        }
-    }
-
-    // LocalStorage & Progress Logic
-    const totalModules = 24;
-    
-    function loadProgress() {
-        const checkboxes = document.querySelectorAll('.custom-checkbox');
-        checkboxes.forEach(box => {
-            const savedState = localStorage.getItem(box.id);
-            if (savedState === 'true') {
-                box.checked = true;
-            }
-        });
-        updateProgress();
-    }
-
-    function updateProgress() {
-        const checkboxes = document.querySelectorAll('.custom-checkbox');
-        let checkedCount = 0;
-        
-        checkboxes.forEach(box => {
-            if (box.checked) {
-                checkedCount++;
-                localStorage.setItem(box.id, 'true');
-            } else {
-                localStorage.setItem(box.id, 'false');
-            }
-        });
-
-        const percentage = Math.round((checkedCount / totalModules) * 100);
-        document.getElementById('progressBar').style.width = percentage + '%';
-        document.getElementById('progressText').innerText = percentage + '% Concluído (' + checkedCount + '/24 Módulos)';
-        
-        // Change title if complete
-        if(percentage === 100) {
-            document.title = "🏆 CyberMastery Completo!";
-        }
-    }
-
-    // Initialize
-    window.onload = loadProgress;
-</script>
 
 </body>
 </html>
